@@ -163,5 +163,4 @@ public class Main {
         }
         System.out.printf("Chance: %d", chance);
     }
-
 }
