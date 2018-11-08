@@ -7,7 +7,7 @@ public class Main {
         int[] dice = new int[5];
 
         for (int i = 0; i < dice.length; i++) {
-            dice[i] = rand.nextInt(5) + 1;
+            dice[i] = rand.nextInt(6) + 1;
         }
         java.util.Arrays.sort(dice);
 
@@ -154,6 +154,14 @@ public class Main {
             }
         }
         System.out.printf("Yahtzee: %d", yahtzee);
+    }
+
+    public static void chance(int[] dice){
+        int chance = 0;
+        for(int i = 0; i < dice.length; i++) {
+            chance += dice[i];
+        }
+        System.out.printf("Chance: %d", chance);
     }
 
 }
