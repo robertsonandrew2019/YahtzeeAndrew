@@ -16,80 +16,82 @@ public class Main {
         }
         System.out.printf("\n");
 
-        aces(dice);
-        twos(dice);
-        threes(dice);
-        fours(dice);
-        fives(dice);
-        sixes(dice);
-        threeOfAKind(dice);
-        fourOfAKind(dice);
-        fullHouse(dice);
-        straights(dice);
-        yahtzee(dice);
+        int aces = aces(dice); System.out.printf("Aces: %d\n", aces);
+        int twos = twos(dice); System.out.printf("Twos: %d\n", twos);
+        int threes = threes(dice); System.out.printf("Threes: %d\n", threes);
+        int fours = fours(dice); System.out.printf("Fours: %d\n", fours);
+        int fives = fives(dice); System.out.printf("Fives: %d\n", fives);
+        int sixes = sixes(dice); System.out.printf("Sixes: %d\n", sixes);
+        int threeOfAKind = threeOfAKind(dice); System.out.printf("Three of a Kind: %d\n", threeOfAKind);
+        int fourOfAKind = fourOfAKind(dice); System.out.printf("Four of a Kind: %d\n", fourOfAKind);
+        int fullHouse = fullHouse(dice); System.out.printf("Full House: %d\n", fullHouse);
+        int smallStraight = smallStraight(dice); System.out.printf("Small Straight: %d\n", smallStraight);
+        int largeStraight = largeStraight(dice); System.out.printf("Large Straight: %d\n", largeStraight);
+        int yahtzee = yahtzee(dice); System.out.printf("Yahtzee!: %d\n", yahtzee);
+        int chance = chance(dice); System.out.printf("Chance: %d", chance);
     }
 
-    public static void aces(int[] dice) {
+    public static int aces(int[] dice) {
         int ace = 0;
         for (int i = 0; i < dice.length; i++) {
             if (dice[i] == 1) {
                 ace++;
             }
         }
-        System.out.printf("Aces: %d\n", ace);
+        return ace;
     }
 
-    public static void twos(int[] dice) {
+    public static int twos(int[] dice) {
         int two = 0;
         for (int i = 0; i < dice.length; i++) {
             if (dice[i] == 2) {
                 two += 2;
             }
         }
-        System.out.printf("Twos: %d\n", two);
+        return two;
     }
 
-    public static void threes(int[] dice) {
+    public static int threes(int[] dice) {
         int three = 0;
         for (int i = 0; i < dice.length; i++) {
             if (dice[i] == 3) {
                 three += 3;
             }
         }
-        System.out.printf("Threes: %d\n", three);
+        return three;
     }
 
-    public static void fours(int[] dice) {
+    public static int fours(int[] dice) {
         int four = 0;
         for (int i = 0; i < dice.length; i++) {
             if (dice[i] == 4) {
                 four += 4;
             }
         }
-        System.out.printf("Fours: %d\n", four);
+        return four;
     }
 
-    public static void fives(int[] dice) {
+    public static int fives(int[] dice) {
         int five = 0;
         for (int i = 0; i < dice.length; i++) {
             if (dice[i] == 5) {
                 five += 5;
             }
         }
-        System.out.printf("Fives: %d\n", five);
+        return five;
     }
 
-    public static void sixes(int[] dice) {
+    public static int sixes(int[] dice) {
         int six = 0;
         for (int i = 0; i < dice.length; i++) {
             if (dice[i] == 6) {
                 six += 6;
             }
         }
-        System.out.printf("Sixes: %d\n", six);
+        return six;
     }
 
-    public static void threeOfAKind(int[] dice) {
+    public static int threeOfAKind(int[] dice) {
         int threeOfAKind = 0;
         for (int i = 0; i < dice.length - 3; i++) {
             if (dice[i] == dice[i + 1] && dice[i + 1] == dice[i + 2]) {
@@ -98,10 +100,10 @@ public class Main {
                 }
             }
         }
-        System.out.printf("Three of a Kind: %d\n", threeOfAKind);
+        return threeOfAKind;
     }
 
-    public static void fourOfAKind(int[] dice) {
+    public static int fourOfAKind(int[] dice) {
         int fourOfAKind = 0;
         for (int i = 0; i < dice.length - 3; i++) {
             if (dice[i] == dice[i + 1] && dice[i + 1] == dice[i + 2] && dice[i + 2] == dice[i + 3]) {
@@ -110,22 +112,21 @@ public class Main {
                 }
             }
         }
-        System.out.printf("Four of a Kind: %d\n", fourOfAKind);
+        return fourOfAKind;
     }
 
-    public static void fullHouse(int[] dice) { //three of one nuber, 2 of another
+    public static int fullHouse(int[] dice) { //three of one nuber, 2 of another
         int fullHouse = 0;
         if ((((dice[0] == dice[1]) && (dice[1] == dice[2])) && (dice[3] == dice[4])) || ((dice[0] == dice[1]) && ((dice[2] == dice[3]) && (dice[3] == dice[4])))) {
             fullHouse = 25;
             }
-        System.out.printf("Full House: %d\n", fullHouse);
+        return fullHouse;
     }
 
-    public static void straights(int[] dice) {
+    public static int smallStraight(int[] dice) {
         int count = 0;
         int smallStraight = 0;
-        int largeStraight = 0;
-        for (int i = 0; i < dice.length-1; i++) {
+        for (int i = 0; i < dice.length - 1; i++) {
             if ((dice[i + 1] - dice[i]) == 1) {
                 count++;
             }
@@ -133,14 +134,24 @@ public class Main {
         if (count == 4) {
             smallStraight = 30;
         }
-        else if (count >= 5) {
-            largeStraight = 40;
-        }
-        System.out.printf("Small Straight: %d\n", largeStraight);
-        System.out.printf("Large Straight: %d\n", largeStraight);
+        return smallStraight;
     }
 
-    public static void yahtzee(int[] dice) {
+    public static int largeStraight(int[] dice) {
+        int count = 0;
+        int largeStraight = 0;
+        for (int i = 0; i < dice.length - 1; i++) {
+            if ((dice[i + 1] - dice[i]) == 1) {
+                count++;
+            }
+        }
+        if (count == 5) {
+            largeStraight = 40;
+        }
+        return largeStraight;
+    }
+
+    public static int yahtzee(int[] dice) {
         int count = 0;
         int yahtzee = 0;
         for (int i = 0; i < dice.length; i++) {
@@ -153,14 +164,14 @@ public class Main {
                 }
             }
         }
-        System.out.printf("Yahtzee: %d", yahtzee);
+        return yahtzee;
     }
 
-    public static void chance(int[] dice){
+    public static int chance(int[] dice){
         int chance = 0;
         for(int i = 0; i < dice.length; i++) {
             chance += dice[i];
         }
-        System.out.printf("Chance: %d", chance);
+        return chance;
     }
 }
