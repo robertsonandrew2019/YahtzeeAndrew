@@ -1,0 +1,16 @@
+/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51557:/Applications/IntelliJ IDEA CE.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/andrewrobertson/IdeaProjects/Yahtzee!/out/production/Yahtzee! Main
+1 2 3 5 6 
+Aces: 1
+Twos: 2
+Threes: 3
+Fours: 0
+Fives: 5
+Sixes: 6
+Three of a Kind: 0
+Four of a Kind: 0
+Full House: 0
+Small Straight: 30
+Large Straight: 0
+Yahtzee!: 0
+Chance: 17
+Process finished with exit code 0
